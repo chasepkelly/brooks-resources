@@ -1,6 +1,6 @@
 # Brooks Kelly public resources
 
-Public First-Home Resource Library, served at https://resources.brookskelly.com/fthb/.
+Public First-Home Resource Library, served at https://resources.brookskellyteam.com/fthb/.
 
 The `fthb/` directory is a byte-identical copy of `public/fthb/` from chasepkelly/lead-triage-crm at d56fbaa6d97abad82127a5557e3edb2dde793f94. It matched all 18 live files at https://crm.themortgagechaser.com/fthb/ on October 26, 2026. Keep the original CRM paths available for previous links.
 
