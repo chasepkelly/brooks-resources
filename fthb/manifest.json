@@ -1,0 +1,1197 @@
+{
+  "status": "draft-review-only",
+  "created": "2026-10-24",
+  "calendarCutoff": "Sender must stop at enrollment timestamp plus 36 calendar months; weeks 1..158 are content coverage only.",
+  "counts": {
+    "magnets": 8,
+    "primaryEducation": 158,
+    "extraEducation": 12,
+    "education": 170,
+    "offers": 158,
+    "totalMessages": 328
+  },
+  "cadence": {
+    "weeks1to12": "2 education + 1 offer each week",
+    "afterWeek12": "1 education + 1 offer each week until calendar cutoff"
+  },
+  "adaptations": [
+    "User requested cadence overrides framework 3x/week default.",
+    "User explicitly skipped TTO certification for this draft.",
+    "No invented borrower anecdotes, quotes, rates or eligibility thresholds."
+  ],
+  "magnets": [
+    {
+      "keyword": "PAYMENT",
+      "title": "Your Comfortable Payment Workbook",
+      "path": "/fthb/payment.html",
+      "description": "Build a household housing budget that leaves room for your actual life."
+    },
+    {
+      "keyword": "CASH",
+      "title": "Cash-to-Close Planner",
+      "path": "/fthb/cash.html",
+      "description": "Separate purchase funds, moving costs and money you want to keep."
+    },
+    {
+      "keyword": "CREDIT",
+      "title": "Mortgage Credit Preparation Checklist",
+      "path": "/fthb/credit.html",
+      "description": "Organize credit questions and records without chasing a promised score."
+    },
+    {
+      "keyword": "READY",
+      "title": "Preapproval Preparation Kit",
+      "path": "/fthb/ready.html",
+      "description": "Gather the right questions, document checklist and follow-up tracker."
+    },
+    {
+      "keyword": "COMPARE",
+      "title": "Mortgage Offer Comparison Workbook",
+      "path": "/fthb/compare.html",
+      "description": "Compare written offers with the assumptions and questions kept visible."
+    },
+    {
+      "keyword": "SHOP",
+      "title": "First-Home Shopping Scorecard",
+      "path": "/fthb/shop.html",
+      "description": "Compare homes using your priorities, questions and verified information."
+    },
+    {
+      "keyword": "OFFER",
+      "title": "Offer-to-Keys Roadmap",
+      "path": "/fthb/offer.html",
+      "description": "Know the questions, people and checkpoints between an offer and possession."
+    },
+    {
+      "keyword": "PLAN",
+      "title": "Your Homebuying Readiness Plan",
+      "path": "/fthb/plan.html",
+      "description": "Turn a flexible buying timeline into specific next steps and review dates."
+    }
+  ],
+  "sources": [
+    "https://www.consumerfinance.gov/owning-a-home/close/review-documents-before-closing/",
+    "https://www.consumerfinance.gov/owning-a-home/close/schedule-a-home-inspection/",
+    "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+    "https://www.consumerfinance.gov/owning-a-home/prepare/assess-your-spending/",
+    "https://www.consumerfinance.gov/owning-a-home/prepare/create-a-loan-application-packet/",
+    "https://www.consumerfinance.gov/owning-a-home/prepare/determine-your-down-payment/",
+    "https://www.consumerfinance.gov/owning-a-home/prepare/get-your-money-situation-in-order/",
+    "https://www.consumerfinance.gov/owning-a-home/close/shop-for-homeowners-insurance/",
+    "https://www.consumerfinance.gov/ask-cfpb/what-kind-of-down-payment-do-i-need-how-does-the-amount-of-down-payment-i-make-affect-the-terms-of-my-mortgage-loan-en-120/",
+    "https://www.consumerfinance.gov/owning-a-home/prepare/get-your-money-situation-in-order/",
+    "https://www.consumerfinance.gov/ask-cfpb/whats-the-difference-between-a-prequalification-letter-and-a-preapproval-letter-en-127/",
+    "https://www.consumerfinance.gov/owning-a-home/close/schedule-a-home-inspection/",
+    "https://www.consumerfinance.gov/owning-a-home/loan-estimate/",
+    "https://www.consumerfinance.gov/owning-a-home/prepare/determine-your-down-payment/",
+    "https://www.consumerfinance.gov/owning-a-home/prepare/create-a-loan-application-packet/"
+  ],
+  "schedule": [
+    {
+      "week": 1,
+      "keyword": "PAYMENT",
+      "exercise": 1,
+      "educationSubject": "Your payment needs a little breathing room",
+      "offerAngle": "Work backward from the money you want left each month, with a worksheet that keeps the house from taking every spare dollar."
+    },
+    {
+      "week": 2,
+      "keyword": "CASH",
+      "exercise": 1,
+      "educationSubject": "The down payment is one bucket",
+      "offerAngle": "See the four cash buckets before you decide whether your savings target is complete."
+    },
+    {
+      "week": 3,
+      "keyword": "CREDIT",
+      "exercise": 1,
+      "educationSubject": "Start with the report, not the rumor",
+      "offerAngle": "Replace borrowed credit advice with a checklist built around the questions in your own file."
+    },
+    {
+      "week": 4,
+      "keyword": "READY",
+      "exercise": 1,
+      "educationSubject": "Ask what preapproval means here",
+      "offerAngle": "Find out what has actually been reviewed behind a preapproval letter."
+    },
+    {
+      "week": 5,
+      "keyword": "COMPARE",
+      "exercise": 1,
+      "educationSubject": "Compare the same proposed purchase",
+      "offerAngle": "Make sure two mortgage offers are answering the same question before choosing between them."
+    },
+    {
+      "week": 6,
+      "keyword": "SHOP",
+      "exercise": 1,
+      "educationSubject": "Choose the must-haves before the tour",
+      "offerAngle": "Keep the must-haves visible when a beautiful kitchen tries to dominate the house decision."
+    },
+    {
+      "week": 7,
+      "keyword": "OFFER",
+      "exercise": 1,
+      "educationSubject": "An accepted offer starts another checklist",
+      "offerAngle": "Turn an accepted offer into a clear list of dates, owners and next steps."
+    },
+    {
+      "week": 8,
+      "keyword": "PLAN",
+      "exercise": 1,
+      "educationSubject": "You can prepare without choosing a house",
+      "offerAngle": "Start a homebuying plan before you know the address or the exact month."
+    },
+    {
+      "week": 9,
+      "keyword": "PAYMENT",
+      "exercise": 2,
+      "educationSubject": "The number that reaches your bank account",
+      "offerAngle": "Turn your pay schedule into a usable monthly budget before you pick a house payment."
+    },
+    {
+      "week": 10,
+      "keyword": "CASH",
+      "exercise": 2,
+      "educationSubject": "What cash do you actually want to use?",
+      "offerAngle": "Separate the money available for a home from the money you intend to protect."
+    },
+    {
+      "week": 11,
+      "keyword": "CREDIT",
+      "exercise": 2,
+      "educationSubject": "Check the identity details first",
+      "offerAngle": "Start a credit-report review with the identity details that are easy to skim past."
+    },
+    {
+      "week": 12,
+      "keyword": "READY",
+      "exercise": 2,
+      "educationSubject": "A checklist should fit your income",
+      "offerAngle": "Get a document list matched to how you earn income instead of guessing what to upload."
+    },
+    {
+      "week": 13,
+      "keyword": "COMPARE",
+      "exercise": 2,
+      "educationSubject": "A rate without a date is incomplete",
+      "offerAngle": "Put the date and lock information beside each quoted rate before comparing offers."
+    },
+    {
+      "week": 14,
+      "keyword": "SHOP",
+      "exercise": 2,
+      "educationSubject": "Make every home answer the same questions",
+      "offerAngle": "Compare homes with a consistent scorecard instead of a collection of impressions."
+    },
+    {
+      "week": 15,
+      "keyword": "OFFER",
+      "exercise": 2,
+      "educationSubject": "Know who answers which question",
+      "offerAngle": "Create a reliable contact map for the people involved between an offer and the keys."
+    },
+    {
+      "week": 16,
+      "keyword": "PLAN",
+      "exercise": 2,
+      "educationSubject": "Pick one task for the next thirty days",
+      "offerAngle": "Choose a useful thirty-day action instead of staring at an entire homebuying checklist."
+    },
+    {
+      "week": 17,
+      "keyword": "PAYMENT",
+      "exercise": 3,
+      "educationSubject": "A payment quote is only the beginning",
+      "offerAngle": "Sort the costs inside a payment quote from the bills you will still pay outside it."
+    },
+    {
+      "week": 18,
+      "keyword": "CASH",
+      "exercise": 3,
+      "educationSubject": "Put moving costs on their own page",
+      "offerAngle": "Build a moving budget that sits beside your purchase costs rather than hiding inside them."
+    },
+    {
+      "week": 19,
+      "keyword": "CREDIT",
+      "exercise": 3,
+      "educationSubject": "Make an unfamiliar-account list",
+      "offerAngle": "Organize unfamiliar report entries so you can ask a precise question rather than send your whole file around."
+    },
+    {
+      "week": 20,
+      "keyword": "READY",
+      "exercise": 3,
+      "educationSubject": "Start a clean document index",
+      "offerAngle": "Track requested and submitted documents in one place so a repeated request is easy to resolve."
+    },
+    {
+      "week": 21,
+      "keyword": "COMPARE",
+      "exercise": 3,
+      "educationSubject": "Match the loan term first",
+      "offerAngle": "Catch a loan-term mismatch before a smaller payment wins your attention."
+    },
+    {
+      "week": 22,
+      "keyword": "SHOP",
+      "exercise": 3,
+      "educationSubject": "Visit the route you would actually use",
+      "offerAngle": "Test a location against the trips your household would actually make."
+    },
+    {
+      "week": 23,
+      "keyword": "OFFER",
+      "exercise": 3,
+      "educationSubject": "Read contingencies with the right professional",
+      "offerAngle": "Prepare a plain-language contingency review with the professional handling your contract."
+    },
+    {
+      "week": 24,
+      "keyword": "PLAN",
+      "exercise": 3,
+      "educationSubject": "A ninety-day checkpoint needs evidence",
+      "offerAngle": "Give a ninety-day check-in something concrete to review."
+    },
+    {
+      "week": 25,
+      "keyword": "PAYMENT",
+      "exercise": 4,
+      "educationSubject": "The bills that arrive once a year",
+      "offerAngle": "Catch the annual bills that make a comfortable-looking house payment feel tight later."
+    },
+    {
+      "week": 26,
+      "keyword": "CASH",
+      "exercise": 4,
+      "educationSubject": "A reserve needs a purpose",
+      "offerAngle": "Choose what your cash cushion is for and separate that choice from lender requirements."
+    },
+    {
+      "week": 27,
+      "keyword": "CREDIT",
+      "exercise": 4,
+      "educationSubject": "Dates can clarify a credit question",
+      "offerAngle": "Build a dated record of a credit question before trying to explain it from memory."
+    },
+    {
+      "week": 28,
+      "keyword": "READY",
+      "exercise": 4,
+      "educationSubject": "Check the statement period",
+      "offerAngle": "Catch mismatched statement dates before an upload creates another round of follow-up."
+    },
+    {
+      "week": 29,
+      "keyword": "COMPARE",
+      "exercise": 4,
+      "educationSubject": "Ask what the payment includes",
+      "offerAngle": "Compare the complete payment picture instead of two headline monthly numbers."
+    },
+    {
+      "week": 30,
+      "keyword": "SHOP",
+      "exercise": 4,
+      "educationSubject": "Turn a condition concern into a question",
+      "offerAngle": "Build a clear inspection-question list from the things you noticed during a tour."
+    },
+    {
+      "week": 31,
+      "keyword": "OFFER",
+      "exercise": 4,
+      "educationSubject": "Schedule around the deadlines you really have",
+      "offerAngle": "Build a transaction calendar from your actual documents rather than a generic online timeline."
+    },
+    {
+      "week": 32,
+      "keyword": "PLAN",
+      "exercise": 4,
+      "educationSubject": "Use six months as a planning window",
+      "offerAngle": "Turn a six-month intention into a sequence of manageable preparation tasks."
+    },
+    {
+      "week": 33,
+      "keyword": "PAYMENT",
+      "exercise": 5,
+      "educationSubject": "Try the budget before the move",
+      "offerAngle": "Run a practice month before you commit, with a place to record what actually felt different."
+    },
+    {
+      "week": 34,
+      "keyword": "CASH",
+      "exercise": 5,
+      "educationSubject": "Deposits need a paper trail",
+      "offerAngle": "Map a clean record of your purchase funds before money starts moving around."
+    },
+    {
+      "week": 35,
+      "keyword": "CREDIT",
+      "exercise": 5,
+      "educationSubject": "Keep a dispute folder",
+      "offerAngle": "Keep the documents and responses for a credit dispute in one clear tracker."
+    },
+    {
+      "week": 36,
+      "keyword": "READY",
+      "exercise": 5,
+      "educationSubject": "Use the secure upload route",
+      "offerAngle": "Set up a verified document-upload routine before sharing sensitive records."
+    },
+    {
+      "week": 37,
+      "keyword": "COMPARE",
+      "exercise": 5,
+      "educationSubject": "Put points and credits on the page",
+      "offerAngle": "Review the upfront-cost tradeoff alongside the rate rather than in a separate conversation."
+    },
+    {
+      "week": 38,
+      "keyword": "SHOP",
+      "exercise": 5,
+      "educationSubject": "Measure the spaces that have a job",
+      "offerAngle": "Check whether the rooms can do the jobs you need before you fall in love with the layout."
+    },
+    {
+      "week": 39,
+      "keyword": "OFFER",
+      "exercise": 5,
+      "educationSubject": "Inspection and appraisal ask different questions",
+      "offerAngle": "Keep the inspection and appraisal questions separate so an important concern does not fall between them."
+    },
+    {
+      "week": 40,
+      "keyword": "PLAN",
+      "exercise": 5,
+      "educationSubject": "Your lease is part of the timeline",
+      "offerAngle": "Connect the homebuying timeline to the lease dates you actually have."
+    },
+    {
+      "week": 41,
+      "keyword": "PAYMENT",
+      "exercise": 6,
+      "educationSubject": "Keep the grocery budget honest",
+      "offerAngle": "Build the housing budget around the grocery bill you really have, with changes shown separately."
+    },
+    {
+      "week": 42,
+      "keyword": "CASH",
+      "exercise": 6,
+      "educationSubject": "Gifts are a conversation before a transfer",
+      "offerAngle": "Prepare the questions to ask about family help before anyone transfers money."
+    },
+    {
+      "week": 43,
+      "keyword": "CREDIT",
+      "exercise": 6,
+      "educationSubject": "Ask before opening a new account",
+      "offerAngle": "Prepare a quick check-in about a new credit account before the application plan changes."
+    },
+    {
+      "week": 44,
+      "keyword": "READY",
+      "exercise": 6,
+      "educationSubject": "Explain a job change early",
+      "offerAngle": "Prepare a clear job-change timeline for your lender conversation."
+    },
+    {
+      "week": 45,
+      "keyword": "COMPARE",
+      "exercise": 6,
+      "educationSubject": "Your planned time in the home matters",
+      "offerAngle": "Bring your likely time horizon into the loan comparison without relying on a promised refinance."
+    },
+    {
+      "week": 46,
+      "keyword": "SHOP",
+      "exercise": 6,
+      "educationSubject": "Ask about association documents early",
+      "offerAngle": "Organize association questions before rules or costs surprise you late in the purchase."
+    },
+    {
+      "week": 47,
+      "keyword": "OFFER",
+      "exercise": 6,
+      "educationSubject": "Repair discussions need a written record",
+      "offerAngle": "Track a repair discussion from request to documented agreement and verification."
+    },
+    {
+      "week": 48,
+      "keyword": "PLAN",
+      "exercise": 6,
+      "educationSubject": "Name the question that is keeping you stuck",
+      "offerAngle": "Find the one unanswered question that would make your next homebuying step clearer."
+    },
+    {
+      "week": 49,
+      "keyword": "PAYMENT",
+      "exercise": 7,
+      "educationSubject": "Who pays which household bill?",
+      "offerAngle": "Put the household bill split on paper before a home becomes a shared commitment."
+    },
+    {
+      "week": 50,
+      "keyword": "CASH",
+      "exercise": 7,
+      "educationSubject": "Do not count the same deposit twice",
+      "offerAngle": "Catch duplicated savings in your purchase plan before an inflated total misleads you."
+    },
+    {
+      "week": 51,
+      "keyword": "CREDIT",
+      "exercise": 7,
+      "educationSubject": "Closing an account is a decision too",
+      "offerAngle": "Think through an account closure before acting on a one-size-fits-all credit tip."
+    },
+    {
+      "week": 52,
+      "keyword": "READY",
+      "exercise": 7,
+      "educationSubject": "Self-employment needs its own questions",
+      "offerAngle": "Organize the first questions for a self-employed mortgage review without guessing the qualifying income."
+    },
+    {
+      "week": 53,
+      "keyword": "COMPARE",
+      "exercise": 7,
+      "educationSubject": "Keep cash to close separate from closing costs",
+      "offerAngle": "Understand the difference between the closing-cost figure and the cash your purchase may require."
+    },
+    {
+      "week": 54,
+      "keyword": "SHOP",
+      "exercise": 7,
+      "educationSubject": "Look past the staged room",
+      "offerAngle": "Test a staged home against the belongings and routines you actually have."
+    },
+    {
+      "week": 55,
+      "keyword": "OFFER",
+      "exercise": 7,
+      "educationSubject": "Ask what an appraisal issue changes",
+      "offerAngle": "Organize the questions to ask if an appraisal raises an issue during your purchase."
+    },
+    {
+      "week": 56,
+      "keyword": "PLAN",
+      "exercise": 7,
+      "educationSubject": "Choose the right kind of appointment",
+      "offerAngle": "Prepare an early lender conversation around what you want to understand, without pretending you are ready to buy tomorrow."
+    },
+    {
+      "week": 57,
+      "keyword": "PAYMENT",
+      "exercise": 8,
+      "educationSubject": "Give maintenance its own line",
+      "offerAngle": "Separate routine upkeep from the repair cushion so neither disappears inside a single payment number."
+    },
+    {
+      "week": 58,
+      "keyword": "CASH",
+      "exercise": 8,
+      "educationSubject": "Seller credits need an actual agreement",
+      "offerAngle": "Track a seller-credit request without treating it as cash you already have."
+    },
+    {
+      "week": 59,
+      "keyword": "CREDIT",
+      "exercise": 8,
+      "educationSubject": "Separate payoff wishes from the purchase plan",
+      "offerAngle": "Put a debt payoff and the remaining homebuying cash on the same page before deciding."
+    },
+    {
+      "week": 60,
+      "keyword": "READY",
+      "exercise": 8,
+      "educationSubject": "Bonuses deserve a separate line",
+      "offerAngle": "Separate base and variable pay before the document request gets confusing."
+    },
+    {
+      "week": 61,
+      "keyword": "COMPARE",
+      "exercise": 8,
+      "educationSubject": "Ask about an adjustable feature",
+      "offerAngle": "Prepare precise questions about a loan feature that may change over time."
+    },
+    {
+      "week": 62,
+      "keyword": "SHOP",
+      "exercise": 8,
+      "educationSubject": "Keep repair questions separate from cosmetic wishes",
+      "offerAngle": "Separate cosmetic wishes from the property questions that deserve further investigation."
+    },
+    {
+      "week": 63,
+      "keyword": "OFFER",
+      "exercise": 8,
+      "educationSubject": "Keep document requests moving",
+      "offerAngle": "Keep the open-document list visible while the purchase moves toward closing."
+    },
+    {
+      "week": 64,
+      "keyword": "PLAN",
+      "exercise": 8,
+      "educationSubject": "Keep your reasons visible",
+      "offerAngle": "Check whether the homebuying plan still serves the reasons you started it."
+    },
+    {
+      "week": 65,
+      "keyword": "PAYMENT",
+      "exercise": 9,
+      "educationSubject": "Check the commute budget too",
+      "offerAngle": "Compare two locations using the housing bill and the commute you would actually live with."
+    },
+    {
+      "week": 66,
+      "keyword": "CASH",
+      "exercise": 9,
+      "educationSubject": "Assistance starts with questions",
+      "offerAngle": "Organize assistance-program questions without assuming an advertised benefit belongs in your budget."
+    },
+    {
+      "week": 67,
+      "keyword": "CREDIT",
+      "exercise": 9,
+      "educationSubject": "A payment calendar is more useful than a promise",
+      "offerAngle": "Create a practical payment calendar rather than relying on memory during a busy month."
+    },
+    {
+      "week": 68,
+      "keyword": "READY",
+      "exercise": 9,
+      "educationSubject": "Make missing documents visible",
+      "offerAngle": "Turn an incomplete application folder into a short, actionable missing-document list."
+    },
+    {
+      "week": 69,
+      "keyword": "COMPARE",
+      "exercise": 9,
+      "educationSubject": "Lower upfront cash needs a second look",
+      "offerAngle": "See what changes along with a lower upfront cash requirement."
+    },
+    {
+      "week": 70,
+      "keyword": "SHOP",
+      "exercise": 9,
+      "educationSubject": "Insurance belongs in the shopping stage",
+      "offerAngle": "Bring insurance cost and coverage into your home comparison while you still have choices."
+    },
+    {
+      "week": 71,
+      "keyword": "OFFER",
+      "exercise": 9,
+      "educationSubject": "Review the insurance plan before the last minute",
+      "offerAngle": "Track insurance decisions and the information the lender still needs before closing."
+    },
+    {
+      "week": 72,
+      "keyword": "PLAN",
+      "exercise": 9,
+      "educationSubject": "Set a review date instead of checking every day",
+      "offerAngle": "Replace daily second-guessing with a planned review and a short information-gathering list."
+    },
+    {
+      "week": 73,
+      "keyword": "PAYMENT",
+      "exercise": 10,
+      "educationSubject": "Childcare belongs in the house decision",
+      "offerAngle": "Check the school and childcare changes that can alter what a home really costs your family."
+    },
+    {
+      "week": 74,
+      "keyword": "CASH",
+      "exercise": 10,
+      "educationSubject": "Savings progress needs a real starting point",
+      "offerAngle": "Turn a vague savings goal into a starting balance, a remaining gap and a monthly action."
+    },
+    {
+      "week": 75,
+      "keyword": "CREDIT",
+      "exercise": 10,
+      "educationSubject": "Read the result before the next step",
+      "offerAngle": "Review a credit-response letter with a checklist for what was answered and what is still open."
+    },
+    {
+      "week": 76,
+      "keyword": "READY",
+      "exercise": 10,
+      "educationSubject": "Tell the lender about planned changes",
+      "offerAngle": "Keep your lender informed about planned changes while the application is under review."
+    },
+    {
+      "week": 77,
+      "keyword": "COMPARE",
+      "exercise": 10,
+      "educationSubject": "Separate lender charges from other estimates",
+      "offerAngle": "Read the cost categories with a question list that keeps different kinds of charges distinct."
+    },
+    {
+      "week": 78,
+      "keyword": "SHOP",
+      "exercise": 10,
+      "educationSubject": "Ask what an inspection includes",
+      "offerAngle": "Choose an inspection with a clearer understanding of what will and will not be evaluated."
+    },
+    {
+      "week": 79,
+      "keyword": "OFFER",
+      "exercise": 10,
+      "educationSubject": "Ask about title and ownership questions",
+      "offerAngle": "Prepare ownership and title questions before the signing appointment."
+    },
+    {
+      "week": 80,
+      "keyword": "PLAN",
+      "exercise": 10,
+      "educationSubject": "You can change the target",
+      "offerAngle": "Evaluate a different homebuying target without losing sight of your household priorities."
+    },
+    {
+      "week": 81,
+      "keyword": "PAYMENT",
+      "exercise": 11,
+      "educationSubject": "Plan around a normal income month",
+      "offerAngle": "Stress-test a house budget against a quieter income month without guessing what a lender will approve."
+    },
+    {
+      "week": 82,
+      "keyword": "CASH",
+      "exercise": 11,
+      "educationSubject": "Two housing bills can overlap",
+      "offerAngle": "Find the possible housing-cost overlap before move-in dates are locked in."
+    },
+    {
+      "week": 83,
+      "keyword": "CREDIT",
+      "exercise": 11,
+      "educationSubject": "Protect your documents while asking for help",
+      "offerAngle": "Ask for help with a credit issue while keeping sensitive records out of ordinary email."
+    },
+    {
+      "week": 84,
+      "keyword": "READY",
+      "exercise": 11,
+      "educationSubject": "Two applicants need one shared task list",
+      "offerAngle": "Divide an application checklist clearly when two people are gathering paperwork."
+    },
+    {
+      "week": 85,
+      "keyword": "COMPARE",
+      "exercise": 11,
+      "educationSubject": "A revised estimate deserves an explanation",
+      "offerAngle": "Track the changes between two Loan Estimates instead of trying to remember the earlier numbers."
+    },
+    {
+      "week": 86,
+      "keyword": "SHOP",
+      "exercise": 11,
+      "educationSubject": "Daily access can matter more than a spare room",
+      "offerAngle": "Check the everyday paths through a home, not just the room count."
+    },
+    {
+      "week": 87,
+      "keyword": "OFFER",
+      "exercise": 11,
+      "educationSubject": "Compare the final disclosure carefully",
+      "offerAngle": "Use a focused comparison checklist when your Closing Disclosure arrives."
+    },
+    {
+      "week": 88,
+      "keyword": "PLAN",
+      "exercise": 11,
+      "educationSubject": "Separate readiness from urgency",
+      "offerAngle": "Sort genuine deadlines from outside pressure before speeding up the buying plan."
+    },
+    {
+      "week": 89,
+      "keyword": "PAYMENT",
+      "exercise": 12,
+      "educationSubject": "Subscriptions are small but still real",
+      "offerAngle": "Find the recurring charges hidden around the edges of your house budget."
+    },
+    {
+      "week": 90,
+      "keyword": "CASH",
+      "exercise": 12,
+      "educationSubject": "The furniture list can wait its turn",
+      "offerAngle": "Keep the first furniture shopping trip from consuming money you planned to keep after closing."
+    },
+    {
+      "week": 91,
+      "keyword": "CREDIT",
+      "exercise": 12,
+      "educationSubject": "A score screenshot leaves questions unanswered",
+      "offerAngle": "Turn a score screenshot into the right lender questions without treating it as an approval."
+    },
+    {
+      "week": 92,
+      "keyword": "READY",
+      "exercise": 12,
+      "educationSubject": "Ask how long the documents stay useful",
+      "offerAngle": "Know what to refresh when you return to house hunting with an older application file."
+    },
+    {
+      "week": 93,
+      "keyword": "COMPARE",
+      "exercise": 12,
+      "educationSubject": "Do not let a verbal promise outrun the paperwork",
+      "offerAngle": "Check whether the written loan offer matches the conversation you remember."
+    },
+    {
+      "week": 94,
+      "keyword": "SHOP",
+      "exercise": 12,
+      "educationSubject": "Verify the information you are relying on",
+      "offerAngle": "Build a short verification list for the property facts that matter most to you."
+    },
+    {
+      "week": 95,
+      "keyword": "OFFER",
+      "exercise": 12,
+      "educationSubject": "Make time to read before signing",
+      "offerAngle": "Plan the document-review time before the moving schedule takes over."
+    },
+    {
+      "week": 96,
+      "keyword": "PLAN",
+      "exercise": 12,
+      "educationSubject": "Give each preparation task an owner",
+      "offerAngle": "Make a shared homebuying plan easier to execute with clear task ownership."
+    },
+    {
+      "week": 97,
+      "keyword": "PAYMENT",
+      "exercise": 13,
+      "educationSubject": "What would you refuse to cut?",
+      "offerAngle": "Set a house-payment boundary around the parts of your life you want to keep."
+    },
+    {
+      "week": 98,
+      "keyword": "CASH",
+      "exercise": 13,
+      "educationSubject": "Refunds are not always on your timetable",
+      "offerAngle": "Check whether expected refunds arrive before the bills you planned to pay with them."
+    },
+    {
+      "week": 99,
+      "keyword": "CREDIT",
+      "exercise": 13,
+      "educationSubject": "If an account belongs to someone else",
+      "offerAngle": "Document an account mismatch clearly before starting the official correction process."
+    },
+    {
+      "week": 100,
+      "keyword": "READY",
+      "exercise": 13,
+      "educationSubject": "Clarify an explanation request",
+      "offerAngle": "Answer a document-explanation request directly, with the facts the reviewer is asking for."
+    },
+    {
+      "week": 101,
+      "keyword": "COMPARE",
+      "exercise": 13,
+      "educationSubject": "Ask who will answer during the process",
+      "offerAngle": "Compare the communication plan as well as the numbers on a loan offer."
+    },
+    {
+      "week": 102,
+      "keyword": "SHOP",
+      "exercise": 13,
+      "educationSubject": "Separate neighborhood fit from assumptions",
+      "offerAngle": "Compare locations around your actual activities instead of vague neighborhood labels."
+    },
+    {
+      "week": 103,
+      "keyword": "OFFER",
+      "exercise": 13,
+      "educationSubject": "Verify money instructions through a known contact",
+      "offerAngle": "Create a funds-verification checklist before an urgent-looking message can rush the decision."
+    },
+    {
+      "week": 104,
+      "keyword": "PLAN",
+      "exercise": 13,
+      "educationSubject": "Keep a question parking lot",
+      "offerAngle": "Set aside future questions while keeping attention on the decision in front of you."
+    },
+    {
+      "week": 105,
+      "keyword": "PAYMENT",
+      "exercise": 14,
+      "educationSubject": "Budget for the first utility bills",
+      "offerAngle": "Replace a single utility guess with a property-by-property checklist of estimates to confirm."
+    },
+    {
+      "week": 106,
+      "keyword": "CASH",
+      "exercise": 14,
+      "educationSubject": "The estimate needs a date",
+      "offerAngle": "Spot stale cost estimates in your purchase plan before they turn into last-minute surprises."
+    },
+    {
+      "week": 107,
+      "keyword": "CREDIT",
+      "exercise": 14,
+      "educationSubject": "Make the next credit step small",
+      "offerAngle": "Choose one useful next credit task instead of tackling every rumor at once."
+    },
+    {
+      "week": 108,
+      "keyword": "READY",
+      "exercise": 14,
+      "educationSubject": "Keep names consistent across records",
+      "offerAngle": "Spot a name mismatch in your paperwork before it becomes a confusing follow-up request."
+    },
+    {
+      "week": 109,
+      "keyword": "COMPARE",
+      "exercise": 14,
+      "educationSubject": "The lowest number may leave a blank elsewhere",
+      "offerAngle": "Find missing information that can make one mortgage quote appear cheaper than another."
+    },
+    {
+      "week": 110,
+      "keyword": "SHOP",
+      "exercise": 14,
+      "educationSubject": "Ask about the items that stay",
+      "offerAngle": "Clarify which visible items are part of the purchase before planning around them."
+    },
+    {
+      "week": 111,
+      "keyword": "OFFER",
+      "exercise": 14,
+      "educationSubject": "The walkthrough needs a checklist",
+      "offerAngle": "Prepare a final-walkthrough list tied to the actual agreement for the home."
+    },
+    {
+      "week": 112,
+      "keyword": "PLAN",
+      "exercise": 14,
+      "educationSubject": "A pause can have a plan",
+      "offerAngle": "Pause house hunting with a clear return point and a manageable preparation list."
+    },
+    {
+      "week": 113,
+      "keyword": "PAYMENT",
+      "exercise": 15,
+      "educationSubject": "The payment that works today may need reviewing",
+      "offerAngle": "Refresh an older house budget without rebuilding the whole thing from scratch."
+    },
+    {
+      "week": 114,
+      "keyword": "CASH",
+      "exercise": 15,
+      "educationSubject": "Keep purchase money and emergency money distinct",
+      "offerAngle": "Assign your savings once, so the same dollars do not fund both the purchase and the emergency cushion."
+    },
+    {
+      "week": 115,
+      "keyword": "CREDIT",
+      "exercise": 15,
+      "educationSubject": "Keep a record of who said what",
+      "offerAngle": "Sort conflicting credit advice by its source and the facts the adviser actually knew."
+    },
+    {
+      "week": 116,
+      "keyword": "READY",
+      "exercise": 15,
+      "educationSubject": "Your bank app is not your document index",
+      "offerAngle": "Match your financial-document uploads to the format the lender actually needs."
+    },
+    {
+      "week": 117,
+      "keyword": "COMPARE",
+      "exercise": 15,
+      "educationSubject": "Compare insurance assumptions carefully",
+      "offerAngle": "Check whether an insurance estimate is distorting the comparison between two offers."
+    },
+    {
+      "week": 118,
+      "keyword": "SHOP",
+      "exercise": 15,
+      "educationSubject": "Compare homes after a pause",
+      "offerAngle": "Recheck a favorite home against your original priorities before making the next decision."
+    },
+    {
+      "week": 119,
+      "keyword": "OFFER",
+      "exercise": 15,
+      "educationSubject": "Confirm when you can take possession",
+      "offerAngle": "Clarify the key-handoff plan before booking the move around an assumed date."
+    },
+    {
+      "week": 120,
+      "keyword": "PLAN",
+      "exercise": 15,
+      "educationSubject": "Prepare for the conversation as a household",
+      "offerAngle": "Get the household\u2019s goals and concerns onto one page before meeting with a lender or agent."
+    },
+    {
+      "week": 121,
+      "keyword": "PAYMENT",
+      "exercise": 16,
+      "educationSubject": "Leave retirement choices out of guesswork",
+      "offerAngle": "Make the savings tradeoffs visible before you decide a larger house payment is affordable."
+    },
+    {
+      "week": 122,
+      "keyword": "CASH",
+      "exercise": 16,
+      "educationSubject": "Who owns the next cash question?",
+      "offerAngle": "Get the right cash question to the right person using a simple follow-up tracker."
+    },
+    {
+      "week": 123,
+      "keyword": "CREDIT",
+      "exercise": 16,
+      "educationSubject": "A collection question needs context",
+      "offerAngle": "Prepare the facts around a collection question before deciding what action to take."
+    },
+    {
+      "week": 124,
+      "keyword": "READY",
+      "exercise": 16,
+      "educationSubject": "Keep the conditions in plain language",
+      "offerAngle": "Turn an unfamiliar condition list into a set of understandable next actions."
+    },
+    {
+      "week": 125,
+      "keyword": "COMPARE",
+      "exercise": 16,
+      "educationSubject": "Write down the lock questions",
+      "offerAngle": "Keep the important rate-lock questions together before you agree to a timing plan."
+    },
+    {
+      "week": 126,
+      "keyword": "SHOP",
+      "exercise": 16,
+      "educationSubject": "The second visit needs a purpose",
+      "offerAngle": "Make a second visit count with a focused list of unresolved questions."
+    },
+    {
+      "week": 127,
+      "keyword": "OFFER",
+      "exercise": 16,
+      "educationSubject": "A changed closing date affects other plans",
+      "offerAngle": "Update the practical moving arrangements when the expected closing date changes."
+    },
+    {
+      "week": 128,
+      "keyword": "PLAN",
+      "exercise": 16,
+      "educationSubject": "Review what has changed since last season",
+      "offerAngle": "Refresh the homebuying plan around the changes in your life since the last check-in."
+    },
+    {
+      "week": 129,
+      "keyword": "PAYMENT",
+      "exercise": 17,
+      "educationSubject": "The cheapest listing is not always the lowest monthly cost",
+      "offerAngle": "Compare two homes on the monthly costs that a listing price leaves out."
+    },
+    {
+      "week": 130,
+      "keyword": "CASH",
+      "exercise": 17,
+      "educationSubject": "A lower upfront cost can have a tradeoff",
+      "offerAngle": "Compare a lower-cash option with the costs or terms that change alongside it."
+    },
+    {
+      "week": 131,
+      "keyword": "CREDIT",
+      "exercise": 17,
+      "educationSubject": "Recheck the plan after a life change",
+      "offerAngle": "Update your credit-preparation plan when real life changes the original assumptions."
+    },
+    {
+      "week": 132,
+      "keyword": "READY",
+      "exercise": 17,
+      "educationSubject": "Ask what happens after the letter",
+      "offerAngle": "Map the steps after the preapproval letter so the process does not feel like a black box."
+    },
+    {
+      "week": 133,
+      "keyword": "COMPARE",
+      "exercise": 17,
+      "educationSubject": "Your comparison needs an uncertainty column",
+      "offerAngle": "See which parts of your loan comparison are firm enough to use and which still need answers."
+    },
+    {
+      "week": 134,
+      "keyword": "SHOP",
+      "exercise": 17,
+      "educationSubject": "A project needs more than enthusiasm",
+      "offerAngle": "Test a renovation idea before treating it as an easy fix in your home decision."
+    },
+    {
+      "week": 135,
+      "keyword": "OFFER",
+      "exercise": 17,
+      "educationSubject": "Know what to bring to signing",
+      "offerAngle": "Prepare for the signing appointment using instructions from the closing professional."
+    },
+    {
+      "week": 136,
+      "keyword": "PLAN",
+      "exercise": 17,
+      "educationSubject": "Keep progress separate from market predictions",
+      "offerAngle": "Build progress around tasks you control instead of waiting for a market prediction to feel certain."
+    },
+    {
+      "week": 137,
+      "keyword": "PAYMENT",
+      "exercise": 18,
+      "educationSubject": "Put a name next to every unknown",
+      "offerAngle": "Turn the blanks in your home budget into a short list of people to contact."
+    },
+    {
+      "week": 138,
+      "keyword": "CASH",
+      "exercise": 18,
+      "educationSubject": "Plan the first month after the keys",
+      "offerAngle": "Check the first month after the move, when several small costs can arrive together."
+    },
+    {
+      "week": 139,
+      "keyword": "CREDIT",
+      "exercise": 18,
+      "educationSubject": "Keep the follow-up date visible",
+      "offerAngle": "Stop open credit questions from disappearing into a folder by giving each one a follow-up date."
+    },
+    {
+      "week": 140,
+      "keyword": "READY",
+      "exercise": 18,
+      "educationSubject": "Do not resend the whole file automatically",
+      "offerAngle": "Resolve a follow-up request using your document log instead of repeatedly resending everything."
+    },
+    {
+      "week": 141,
+      "keyword": "COMPARE",
+      "exercise": 18,
+      "educationSubject": "Ask for plain-language explanations of unfamiliar terms",
+      "offerAngle": "Turn unfamiliar mortgage language into a focused list of practical questions."
+    },
+    {
+      "week": 142,
+      "keyword": "SHOP",
+      "exercise": 18,
+      "educationSubject": "Track questions by property",
+      "offerAngle": "Keep the answers for different homes from getting mixed together during a busy search."
+    },
+    {
+      "week": 143,
+      "keyword": "OFFER",
+      "exercise": 18,
+      "educationSubject": "Do not leave a question unspoken",
+      "offerAngle": "Carry a short unresolved-question list into signing so the busy appointment does not erase it."
+    },
+    {
+      "week": 144,
+      "keyword": "PLAN",
+      "exercise": 18,
+      "educationSubject": "The next step can be a question",
+      "offerAngle": "Move the plan forward with one useful question rather than a premature commitment."
+    },
+    {
+      "week": 145,
+      "keyword": "PAYMENT",
+      "exercise": 19,
+      "educationSubject": "Agree on a walk-away payment",
+      "offerAngle": "Write a clear payment boundary before a favorite house starts moving that boundary for you."
+    },
+    {
+      "week": 146,
+      "keyword": "CASH",
+      "exercise": 19,
+      "educationSubject": "Changed plans deserve a new savings gap",
+      "offerAngle": "Recalculate your savings gap when the homebuying plan changes instead of chasing an outdated number."
+    },
+    {
+      "week": 147,
+      "keyword": "CREDIT",
+      "exercise": 19,
+      "educationSubject": "Help does not have to mean a sales pitch",
+      "offerAngle": "Prepare a focused list of questions for a housing-counseling conversation."
+    },
+    {
+      "week": 148,
+      "keyword": "READY",
+      "exercise": 19,
+      "educationSubject": "Leave room for questions in the appointment",
+      "offerAngle": "Prepare three useful questions for a preapproval conversation, alongside the paperwork."
+    },
+    {
+      "week": 149,
+      "keyword": "COMPARE",
+      "exercise": 19,
+      "educationSubject": "Make the choice for a stated reason",
+      "offerAngle": "Record why an offer fits your priorities and what still needs to be resolved."
+    },
+    {
+      "week": 150,
+      "keyword": "SHOP",
+      "exercise": 19,
+      "educationSubject": "Name the reason you would pass",
+      "offerAngle": "Set clear reasons to pass on a home before pressure makes the decision harder."
+    },
+    {
+      "week": 151,
+      "keyword": "OFFER",
+      "exercise": 19,
+      "educationSubject": "Save the documents you may need later",
+      "offerAngle": "Create a closing-record checklist before the paperwork gets lost in the move."
+    },
+    {
+      "week": 152,
+      "keyword": "PLAN",
+      "exercise": 19,
+      "educationSubject": "Bring the plan together on one page",
+      "offerAngle": "Pull the moving pieces into a one-page readiness plan you can actually keep current."
+    },
+    {
+      "week": 153,
+      "keyword": "PAYMENT",
+      "exercise": 20,
+      "educationSubject": "The budget meeting can be short",
+      "offerAngle": "Bring a useful one-page budget summary to your next conversation instead of a pile of disconnected numbers."
+    },
+    {
+      "week": 154,
+      "keyword": "CASH",
+      "exercise": 20,
+      "educationSubject": "Finish with a cash review",
+      "offerAngle": "Bring an organized cash plan to review, with every figure clearly marked confirmed or still estimated."
+    },
+    {
+      "week": 155,
+      "keyword": "CREDIT",
+      "exercise": 20,
+      "educationSubject": "Ready for a useful credit conversation",
+      "offerAngle": "Pull your preparation into a short credit-question summary that a lender can actually work through."
+    },
+    {
+      "week": 156,
+      "keyword": "READY",
+      "exercise": 20,
+      "educationSubject": "Close the loop on submitted items",
+      "offerAngle": "Track a document through receipt and follow-up instead of treating the upload as the last step."
+    },
+    {
+      "week": 157,
+      "keyword": "COMPARE",
+      "exercise": 20,
+      "educationSubject": "Keep the version you actually chose",
+      "offerAngle": "Keep a clear record of the offer you chose so later documents have a reliable comparison point."
+    },
+    {
+      "week": 158,
+      "keyword": "SHOP",
+      "exercise": 20,
+      "educationSubject": "Bring a short list to the professional",
+      "offerAngle": "Turn your home-tour notes into a prioritized question list for the right professional."
+    }
+  ]
+}
