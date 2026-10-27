@@ -1,6 +1,8 @@
 /* Public, browser-only workbook UI. No background save, analytics, or document upload. */
 (() => {
   'use strict';
+  const actionBar = document.querySelector('.workbook-actions');
+  new ResizeObserver(() => document.documentElement.style.setProperty('--actions-offset', `${actionBar.getBoundingClientRect().height + 16}px`)).observe(actionBar);
   const form = document.querySelector('#send-form');
   const panel = document.querySelector('#review-panel');
   const review = document.querySelector('#review-content');
@@ -8,11 +10,11 @@
   const sendButton = document.querySelector('#confirm-send');
   const editButton = document.querySelector('#edit-workbook');
   const labels = {
-    take_home_income: 'Regular take-home income', non_housing_spending: 'Current non-housing spending',
-    savings_habits: 'Savings habits to preserve', housing_cost: 'Total proposed housing cost',
-    maintenance_allowance: 'Routine maintenance allowance', breathing_room: 'Remaining monthly breathing room',
-    next_decision: 'My next decision', question: 'One question to resolve', question_owner: 'Who can answer it?',
-    follow_up_date: 'Follow-up date',
+    take_home_income: 'Monthly take-home pay', non_housing_spending: 'Monthly bills besides housing',
+    savings_habits: 'What you want to keep saving each month', housing_cost: 'House payment, taxes, insurance and other housing costs',
+    maintenance_allowance: 'Money for home maintenance and repairs', breathing_room: 'Money left after bills and savings',
+    next_decision: 'What I need to decide next', question: 'What I want to ask Brooks', question_owner: 'Who can answer it?',
+    follow_up_date: 'When I want to check back',
   };
   let reviewedPayload = null;
   let previousBody = '';
@@ -41,7 +43,7 @@
   }
   function setBusy(value) {
     busy = value;
-    document.querySelectorAll('[data-answer],[data-exercise],#send-form input,#review-workbook,#confirm-send,#edit-workbook')
+    document.querySelectorAll('[data-answer],[data-exercise],#send-form input,#review-workbook,#quick-review,#confirm-send,#edit-workbook')
       .forEach(control => { control.disabled = value; });
     sendButton.textContent = value ? 'Sending…' : 'Send to Brooks';
     panel.setAttribute('aria-busy', String(value));
@@ -76,7 +78,7 @@
     pair(dl, 'Name', contact.name); pair(dl, 'Email', contact.email); pair(dl, 'Phone', contact.phone);
     for (const [key, label] of Object.entries(labels)) {
       const value = body.answers[key];
-      pair(dl, label, typeof value === 'object' ? [value.figure, value.source && `Source / next action: ${value.source}`].filter(Boolean).join('\n') : value);
+      pair(dl, label, typeof value === 'object' ? [value.figure, value.source && `Where this number came from / what you need to check: ${value.source}`].filter(Boolean).join('\n') : value);
     }
     for (const [key, value] of Object.entries(body.answers.exercises)) pair(dl, `Exercise ${Number(key.slice(-2))} notes`, value);
     review.replaceChildren(dl);
@@ -120,5 +122,23 @@
     for (const { element, open } of printedDetails) { element.open = open; element.classList.remove('print-omit'); }
     printedDetails = [];
   });
+  document.querySelector('#quick-review').addEventListener('click', () => {
+    document.querySelector('#send-section').scrollIntoView({ block: 'start' });
+    form.requestSubmit();
+  });
+  function loadCalendar() {
+    const container = document.querySelector('#calendar-container');
+    if (!container.firstChild) {
+      const frame = document.createElement('iframe');
+      frame.src = 'https://calendly.com/brookskelly/30min';
+      frame.title = 'Book a call with Brooks Kelly';
+      frame.referrerPolicy = 'no-referrer';
+      container.append(frame);
+    }
+    container.hidden = false;
+    document.querySelector('#load-calendar').hidden = true;
+  }
+  document.querySelector('#load-calendar').addEventListener('click', loadCalendar);
+  document.querySelector('#quick-book').addEventListener('click', loadCalendar);
   document.querySelector('#print-workbook').addEventListener('click', () => { preparePrint(); window.print(); });
 })();

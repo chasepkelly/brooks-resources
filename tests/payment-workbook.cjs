@@ -89,11 +89,25 @@ const fs = require('node:fs');
   await page.evaluate(() => { document.querySelectorAll('[data-exercise]').forEach(input => { input.value = ''; input.dispatchEvent(new Event('input', { bubbles: true })); }); });
   const screenshotDir = process.env.SCREENSHOT_DIR;
   if (screenshotDir) fs.mkdirSync(screenshotDir, { recursive: true });
-  for (const width of [390, 1440]) {
+  for (const width of [320, 390, 768, 1440]) {
     await page.setViewportSize({ width, height: 1000 });
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    const targets = await page.locator('.workbook-actions > *').evaluateAll(nodes => nodes.map(n => ({ width: n.getBoundingClientRect().width, height: n.getBoundingClientRect().height })));
+    assert.ok(targets.every(t => t.height >= 44 && t.width >= 44));
+    await page.locator('#household-plan').scrollIntoViewIfNeeded();
+    assert.equal(await page.locator('.workbook-actions').evaluate(n => getComputedStyle(n).position), 'sticky');
+    assert.ok((await page.locator('.workbook-actions').boundingBox()).y >= -1);
+    await page.locator('#quick-review').click();
+    assert.equal(await page.locator('#review-panel').isVisible(), true);
+    await page.locator('#edit-workbook').click();
     if (screenshotDir) await page.screenshot({ path: path.join(screenshotDir, `payment-${width}.png`), fullPage: true });
   }
-  console.log(JSON.stringify({ pass: true, assertions: ['16 summary fields', '20 optional notes', 'identity-free populated print', 'print click and repeated events restore expanded state', 'send validation', 'text-only review', 'failure preserves answers', 'malformed success rejected', 'rate limit honest', 'retry same UUID', 'edit new UUID', 'double-submit blocked', 'receipt-only success', 'no browser persistence', 'mobile/desktop no overflow', 'no browser errors', 'UTF-8 total cap preserves oversized answers'], mockedRequests: requests.length }));
+  assert.equal(await page.locator('#calendar-container iframe').count(), 0);
+  await page.route('https://calendly.com/**', route => route.fulfill({ status: 200, contentType: 'text/html', body: '<p>Calendar test placeholder; no booking</p>' }));
+  await page.locator('#quick-book').click();
+  assert.equal(await page.locator('#calendar-container iframe').getAttribute('src'), 'https://calendly.com/brookskelly/30min');
+  assert.equal(await page.locator('#calendar-container iframe').getAttribute('referrerpolicy'), 'no-referrer');
+  assert.ok(await page.locator('#send-section').evaluate(n => Boolean(n.compareDocumentPosition(document.querySelector('#exercise-1')) & Node.DOCUMENT_POSITION_FOLLOWING)));
+  console.log(JSON.stringify({ pass: true, assertions: ['16 summary fields', '20 optional notes', 'identity-free populated print', 'print click and repeated events restore expanded state', 'send validation', 'text-only review', 'failure preserves answers', 'malformed success rejected', 'rate limit honest', 'retry same UUID', 'edit new UUID', 'double-submit blocked', 'receipt-only success', 'no browser persistence', '320/390/768/1440 no overflow and reachable 44px actions', 'sticky review uses existing review flow', 'calendar opt-in no PII URL', 'send before optional exercises', 'no browser errors', 'UTF-8 total cap preserves oversized answers'], mockedRequests: requests.length }));
   await browser.close();
 })().catch(error => { console.error(error); process.exit(1); });
