@@ -15,3 +15,11 @@ The interactive payment workbook is documented in [WORKBOOK-PILOT.md](WORKBOOK-P
 ## Seven guided tools
 
 See [GUIDED-TOOLS.md](GUIDED-TOOLS.md) for the seven compact interactive resources, shared renderer, version3 contract, generation and release verification. Payment remains on its reviewed version2 implementation.
+
+## Mobile layout correction — October 27, 2026
+
+All eight workbooks load `fthb/workbook-mobile.css`, a shared screen-only override for widths up to 600px. Payment budget cells grow with their labels and answers instead of retaining the old fixed table-cell height. The four sticky actions use equal-width columns, consistent gaps and at least 56px touch targets. Desktop, print, wording, form fields and submission behavior are unchanged. Existing versioned CSS/JS assets remain intact for cached pages. The generator template includes the new stylesheet.
+
+Validation: actual Chrome mobile rendering at 320, 375, 390 and 430 CSS pixels across all eight pages (32 cases): no horizontal overflow, no payment-cell content overflow, and all action targets at least 56px high. At 1440px, control/table/header geometry matched the pre-change live pages in both screen and print media (16 comparisons). Independent existing suites passed payment's 20 checks/32 controls and seven tools' 75 fields without real submissions. All eight HTML pages and the generator template are byte-identical to their prior versions after removing the added stylesheet link. Safari was not directly tested.
+
+Release through a reviewed PR to main, then verify the exact Pages deployment commit and HTTPS bytes for eight HTML files plus the new CSS. A browser refresh loads the new stylesheet; an already-open page retains its previous layout until refreshed. No backend, native flow, storage or service changes are required.
