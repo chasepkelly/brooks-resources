@@ -1,0 +1,23 @@
+{
+  "payment": {
+    "seconds": 35
+  },
+  "cash": {
+    "seconds": 33
+  },
+  "credit": {
+    "seconds": 36
+  },
+  "ready": {
+    "seconds": 36
+  },
+  "compare": {
+    "seconds": 35
+  },
+  "shop": {
+    "seconds": 37
+  },
+  "plan": {
+    "seconds": 34
+  }
+}

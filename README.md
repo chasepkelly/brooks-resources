@@ -27,3 +27,9 @@ Release through a reviewed PR to main, then verify the exact Pages deployment co
 ## Unlisted team video reviews
 
 Review pages under `review/` use randomly named paths, responsive native video controls, inline mobile playback, captions and a direct MP4 download. They are omitted from public navigation and request noindex/nofollow/noarchive. These are unlisted public files, not authenticated/private storage: anyone with the URL can access or share them. Publish only the approved video, captions, poster and player HTML; never copy production journals, receipts, credentials or source corpora. Verify exact MP4 hash, deployed HTTPS assets and byte-range playback after Pages deployment.
+
+## Workbook explainer videos — October 27, 2026
+
+Payment, Cash, Credit, Ready, Compare, Shop and Plan now include their matching Brooks-narrated explainer near the top, before the exercises. Each native player supports inline mobile playback, captions and a direct-video link; videos do not autoplay, and the entire video section is hidden when printing. The library links directly to each available player. Offer has no placeholder or broken player while its narration remains under review.
+
+Approved MP4/poster/VTT files live under `fthb/videos/<workbook>/`. `scripts/explainer-videos.json` controls availability and duration, and `generate-tools.py` persists video markup through the shared template. Payment retains its separately maintained HTML. The shared `workbook-video.css` controls only the player section; existing mobile layout, four sticky actions, form fields, submission logic and privacy/disclosure text remain intact. Publish only the approved media files, never internal voice or delivery logs. Verify all seven media bindings/hashes, actual mobile playback layout, print hiding, generator idempotence and mocked form suites before release.
