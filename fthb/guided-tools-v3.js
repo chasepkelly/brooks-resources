@@ -3,7 +3,6 @@
   'use strict';
   const schema = JSON.parse(document.querySelector('#tool-schema').textContent);
   const fields = schema.steps.flatMap(step => step.fields);
-  document.querySelector('#tool-description').textContent = schema.intro;
   const questions = document.querySelector('#tool-questions');
   schema.steps.forEach((step, index) => {
     const section = document.createElement('section'); section.className = 'guided-question'; section.id = `guided-${index + 1}`;
