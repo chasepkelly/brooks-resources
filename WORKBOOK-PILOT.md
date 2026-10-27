@@ -1,3 +1,5 @@
+> Current page: version2 guided workbook. Earlier sections below document the original version1 pilot; see “Current guided workbook (version2)” for the current contract and tests.
+
 # Interactive payment workbook pilot
 
 Only `fthb/payment.html` changes behavior. The other seven workbooks and their links remain unchanged. This is an unpublished review branch until the backend is deployed and integration has passed review. No video is embedded.
@@ -61,3 +63,29 @@ All four actions remain in a sticky header: Review before sending, Book a call, 
 Brooks’s calendar loads only after the visitor chooses Book a call or Show available times. An always-available direct link provides a fallback. The destination is `https://calendly.com/brookskelly/30min`; an actual browser check confirmed Brooks’s30-minute Personal Loan Consultation and available dates, without making a booking. Apply now opens `https://apply.planethomelending.com/loan-officers/brooks@planethomelending`, verified to identify Brooks Kelly NMLS208792. Loan initiation was not tested. Neither link nor the calendar frame receives workbook answers or identity prefills.
 
 The revised browser suite passes20 checks, including320/390/768/1440px layouts,44px-minimum action targets, sticky top positioning, the existing review flow, opt-in calendar loading and unchanged submission/error/print behavior. Calendar HTTP content is mocked in the automated test; the live event was separately verified in a browser. Seven other workbooks, all36 form-answer contracts and the original legal text remain unchanged. Publication remains held for the backend live smoke/integration and final review.
+
+## Current guided workbook (version2)
+
+The twenty separate exercises have been replaced with five guided questions: preferred payment, what a quote includes, money left each month, an optional comparison of two estimates, and the first question for Brooks. The existing budget appears once: five budget rows above the questions and the existing remaining-money pair within question3. No calculator or qualification assessment is added. The housing row names payment, taxes, insurance and HOA dues; maintenance remains separate.
+
+All answers are optional. Amounts accept text such as “need quote” or “not sure.” The optional comparison starts collapsed with blank amounts. Review and print include text, checkbox and select answers. Sending still requires name/email, shows the review first, and relies on a matching backend receipt. Four actions stay in the top header on desktop and mobile; booking, application links, disclosures and seven other workbooks are preserved.
+
+### Version2 request contract
+
+The envelope remains workbook=`payment`, contact, submission_id and website; version is now2. Answers retain six `{figure,source}` budget objects and `question`. Version2 omits the former exercises/next_decision/question_owner/follow_up_date fields. New `guided` groups:
+
+- `payment_preference`: preferred, too_high (text200 each), unsure (boolean).
+- `quoted_payment`: amount(text200); taxes, homeowners_insurance, mortgage_insurance, hoa_dues (blank/included/separate/not_applicable/not_sure); other_costs(text1000).
+- `remaining`: needs_to_cover(text1000), comfort(blank/yes/no/not_sure). The amount itself remains solely `answers.breathing_room.figure`.
+- `comparison`: option_a and option_b, each cash_at_closing/monthly_payment/savings_left(text200 each); request(text1000).
+- `priority`: blank/missing_costs/lower_payment/savings_left/other. Additional question text remains solely `answers.question`(2000).
+
+Six budget figure/source limits remain200/500. Client UTF-8 total cap remains32,000 bytes. Backend must accept version2 before this page deploys and must continue accepting version1 for cached pages.
+
+### Cache compatibility and verification
+
+The new HTML loads `payment-guided.js` and `payment-guided.css`. Original `payment-workbook.js` and `payment-workbook.css` remain byte-identical for cached version1 HTML. Do not overwrite or remove those old files during this rollout.
+
+Run `WORKBOOK_URL=http://127.0.0.1:8793 node tests/payment-guided.cjs` (same optional PLAYWRIGHT_MODULE/CHROME_PATH/SCREENSHOT_DIR environment variables as above). The new suite passes20 behavior checks across32 answer controls: five sections/no old20, one remaining-money input, optional blank comparison, complete print/review/payload parity, select/checkbox values, validation, errors, safe rendering, retry IDs, pending controls, receipt-only success, no storage, four responsive sizes, calendar opt-in and UTF-8 limit. Actual printed PDF text also preserves both estimate columns, selections and literal user notes. Tests mock requests and never send notifications. Existing `tests/payment-workbook.cjs` documents the historical version1 contract, not the new page.
+
+Private source-to-copy evidence and populated test artifacts remain outside this public repo. Root reviewed the five-question proposal and actual page; release still requires independent review plus the backward-compatible backend deployment before Pages publication. No video, application start, booking or campaign activation is included.
