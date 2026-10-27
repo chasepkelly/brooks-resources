@@ -11,3 +11,7 @@ To update, copy only the reviewed public asset directory from the CRM source, co
 ## Payment workbook pilot
 
 The interactive payment workbook is documented in [WORKBOOK-PILOT.md](WORKBOOK-PILOT.md), including data handling, print behavior, backend contract, tests and the deployment gate. This branch changes only the payment workbook; the other seven resources retain their original content.
+
+## Seven guided tools
+
+See [GUIDED-TOOLS.md](GUIDED-TOOLS.md) for the seven compact interactive resources, shared renderer, version3 contract, generation and release verification. Payment remains on its reviewed version2 implementation.
