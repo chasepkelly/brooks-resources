@@ -1,0 +1,841 @@
+{
+  "cash": {
+    "version": 3,
+    "title": "How much cash would you need to buy?",
+    "intro": "Write down the money you have, the costs you know about and the estimates you still need.",
+    "steps": [
+      {
+        "title": "How much cash would you want to use?",
+        "prompt": "Start with what you have available and what you want to keep in savings.",
+        "fields": [
+          {
+            "id": "cash_available",
+            "label": "Cash available for buying — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "savings_to_keep",
+            "label": "Savings I want to keep — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          }
+        ]
+      },
+      {
+        "title": "What have you been quoted?",
+        "prompt": "Use estimates you have been given. Leave unknown amounts blank or write “need quote.”",
+        "fields": [
+          {
+            "id": "down_payment",
+            "label": "Down payment — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "closing_costs",
+            "label": "Closing costs — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "estimate_source",
+            "label": "Where these estimates came from",
+            "type": "text",
+            "maxLength": 500
+          }
+        ]
+      },
+      {
+        "title": "What else would you need cash for?",
+        "prompt": "Add purchase or moving costs that are not already included above. If you are unsure whether something is included, ask.",
+        "fields": [
+          {
+            "id": "other_costs",
+            "label": "Other costs and amounts",
+            "type": "text",
+            "maxLength": 1000
+          },
+          {
+            "id": "costs_to_check",
+            "label": "Costs I need to check",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "Has anyone discussed help with the costs?",
+        "prompt": "Record what you have been told and what you still need to confirm.",
+        "fields": [
+          {
+            "id": "help_discussed",
+            "label": "Credit or assistance discussed",
+            "type": "text",
+            "maxLength": 500
+          },
+          {
+            "id": "help_status",
+            "label": "What has been confirmed?",
+            "type": "select",
+            "options": [
+              {
+                "value": "",
+                "label": "Choose if you know"
+              },
+              {
+                "value": "discussed",
+                "label": "Only discussed"
+              },
+              {
+                "value": "written",
+                "label": "I have written details to review"
+              },
+              {
+                "value": "not_sure",
+                "label": "Not sure"
+              },
+              {
+                "value": "none",
+                "label": "None discussed"
+              }
+            ]
+          },
+          {
+            "id": "help_conditions",
+            "label": "What I still need to ask about it",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "What do you want Brooks to explain?",
+        "prompt": "Choose the missing amount or cost that would help you most.",
+        "fields": [
+          {
+            "id": "question",
+            "label": "My first question for Brooks",
+            "type": "text",
+            "maxLength": 2000
+          }
+        ]
+      }
+    ],
+    "disclosure": "Discussing a credit or assistance does not mean it is approved."
+  },
+  "credit": {
+    "version": 3,
+    "title": "What do you want to know about your credit?",
+    "intro": "Write down your question before making a change.",
+    "steps": [
+      {
+        "title": "What have you been told so far?",
+        "prompt": "If you have spoken with a lender, write down what you want to understand.",
+        "fields": [
+          {
+            "id": "lender_feedback",
+            "label": "What I was told",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "What are you unsure about?",
+        "prompt": "Choose a topic or describe it in your own words.",
+        "fields": [
+          {
+            "id": "topic",
+            "label": "My question is about",
+            "type": "select",
+            "options": [
+              {
+                "value": "",
+                "label": "Choose if you know"
+              },
+              {
+                "value": "score",
+                "label": "A credit score I was shown"
+              },
+              {
+                "value": "report",
+                "label": "Something on my credit report"
+              },
+              {
+                "value": "debt",
+                "label": "A debt or payment"
+              },
+              {
+                "value": "other",
+                "label": "Something else"
+              }
+            ]
+          },
+          {
+            "id": "uncertainty",
+            "label": "What I do not understand",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "Are you thinking about making a change?",
+        "prompt": "Write down anything you are considering so you can ask about it before acting.",
+        "fields": [
+          {
+            "id": "change_considered",
+            "label": "Change I am considering",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "What would you like Brooks to answer first?",
+        "prompt": "Write the question you want answered before making a change.",
+        "fields": [
+          {
+            "id": "question",
+            "label": "My first question for Brooks",
+            "type": "text",
+            "maxLength": 2000
+          }
+        ]
+      }
+    ],
+    "disclosure": "This page collects questions. It does not recommend paying, disputing, opening or closing an account."
+  },
+  "compare": {
+    "version": 3,
+    "title": "How do these two loan estimates compare?",
+    "intro": "Put the written estimates side by side. Leave anything you cannot find blank and ask Brooks to explain it.",
+    "steps": [
+      {
+        "title": "Are these estimates for the same purchase?",
+        "prompt": "Differences in the property, price, down payment or loan term can change the numbers.",
+        "fields": [
+          {
+            "id": "a_name",
+            "label": "Option A — lender or nickname",
+            "type": "text",
+            "maxLength": 120
+          },
+          {
+            "id": "a_estimate_date",
+            "label": "Option A — estimate date",
+            "type": "date",
+            "maxLength": 10
+          },
+          {
+            "id": "b_name",
+            "label": "Option B — lender or nickname",
+            "type": "text",
+            "maxLength": 120
+          },
+          {
+            "id": "b_estimate_date",
+            "label": "Option B — estimate date",
+            "type": "date",
+            "maxLength": 10
+          },
+          {
+            "id": "same_assumptions",
+            "label": "Same property, price, down payment and loan term?",
+            "type": "select",
+            "options": [
+              {
+                "value": "",
+                "label": "Choose if you know"
+              },
+              {
+                "value": "yes",
+                "label": "Yes"
+              },
+              {
+                "value": "no",
+                "label": "No"
+              },
+              {
+                "value": "not_sure",
+                "label": "Not sure"
+              }
+            ]
+          },
+          {
+            "id": "assumption_differences",
+            "label": "Differences or details I need to check",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "What rates and fees are shown?",
+        "prompt": "Copy what each estimate says. Do not assume a lower rate means a lower total cost.",
+        "fields": [
+          {
+            "id": "a_rate_apr",
+            "label": "Option A — rate and APR as shown",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "a_points_credits",
+            "label": "Option A — points or lender credits as shown",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "b_rate_apr",
+            "label": "Option B — rate and APR as shown",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "b_points_credits",
+            "label": "Option B — points or lender credits as shown",
+            "type": "text",
+            "maxLength": 200
+          }
+        ]
+      },
+      {
+        "title": "What would you pay each month?",
+        "prompt": "Check whether the two monthly amounts include the same costs.",
+        "fields": [
+          {
+            "id": "a_monthly_payment",
+            "label": "Option A — total monthly payment — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "a_included_costs",
+            "label": "Option A — costs included or missing",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "b_monthly_payment",
+            "label": "Option B — total monthly payment — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "b_included_costs",
+            "label": "Option B — costs included or missing",
+            "type": "text",
+            "maxLength": 200
+          }
+        ]
+      },
+      {
+        "title": "How much cash would each option need?",
+        "prompt": "Copy the cash-to-close estimate. Note any fees you want explained.",
+        "fields": [
+          {
+            "id": "a_cash_to_close",
+            "label": "Option A — cash to close — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "b_cash_to_close",
+            "label": "Option B — cash to close — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "fees_to_check",
+            "label": "Fees or amounts I want explained",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "Which difference do you want Brooks to explain?",
+        "prompt": "Choose the difference you most want explained.",
+        "fields": [
+          {
+            "id": "question",
+            "label": "My first question for Brooks",
+            "type": "text",
+            "maxLength": 2000
+          }
+        ]
+      }
+    ],
+    "disclosure": "This comparison does not choose a loan for you."
+  },
+  "ready": {
+    "version": 3,
+    "title": "What do you still need for preapproval?",
+    "intro": "Keep track of what you have been asked for and what you still need.",
+    "steps": [
+      {
+        "title": "What have you done so far?",
+        "prompt": "Write down any application or conversation you have already had.",
+        "fields": [
+          {
+            "id": "stage",
+            "label": "Where I am now",
+            "type": "select",
+            "options": [
+              {
+                "value": "",
+                "label": "Choose if you know"
+              },
+              {
+                "value": "not_started",
+                "label": "I have not started"
+              },
+              {
+                "value": "contacted",
+                "label": "I have spoken with a lender"
+              },
+              {
+                "value": "applied",
+                "label": "I have started an application"
+              },
+              {
+                "value": "asked_documents",
+                "label": "I have been asked for documents"
+              },
+              {
+                "value": "not_sure",
+                "label": "Not sure"
+              }
+            ]
+          },
+          {
+            "id": "requested",
+            "label": "What I have been asked for",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "Which requested documents do you have?",
+        "prompt": "Mark the status of documents you have been asked for.",
+        "fields": [
+          {
+            "id": "income_documents",
+            "label": "Requested pay or income documents",
+            "type": "select",
+            "options": [
+              {
+                "value": "",
+                "label": "Choose if you know"
+              },
+              {
+                "value": "have",
+                "label": "I have it"
+              },
+              {
+                "value": "not_yet",
+                "label": "I do not have it yet"
+              },
+              {
+                "value": "not_requested",
+                "label": "Not requested"
+              },
+              {
+                "value": "not_sure",
+                "label": "Not sure"
+              }
+            ]
+          },
+          {
+            "id": "asset_documents",
+            "label": "Requested bank or asset statements",
+            "type": "select",
+            "options": [
+              {
+                "value": "",
+                "label": "Choose if you know"
+              },
+              {
+                "value": "have",
+                "label": "I have it"
+              },
+              {
+                "value": "not_yet",
+                "label": "I do not have it yet"
+              },
+              {
+                "value": "not_requested",
+                "label": "Not requested"
+              },
+              {
+                "value": "not_sure",
+                "label": "Not sure"
+              }
+            ]
+          },
+          {
+            "id": "other_documents",
+            "label": "Other requested items and whether I have them",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "Has your income or job changed?",
+        "prompt": "Tell Brooks what needs updating.",
+        "fields": [
+          {
+            "id": "income_changes",
+            "label": "Changes I need to mention",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "What do you need next?",
+        "prompt": "Pick the missing item or question you want help with first.",
+        "fields": [
+          {
+            "id": "next_item",
+            "label": "Item I still need",
+            "type": "text",
+            "maxLength": 500
+          },
+          {
+            "id": "who_to_ask",
+            "label": "Who I will ask",
+            "type": "text",
+            "maxLength": 120
+          },
+          {
+            "id": "question",
+            "label": "My first question for Brooks",
+            "type": "text",
+            "maxLength": 2000
+          }
+        ]
+      }
+    ],
+    "disclosure": "Document examples are not a list that everyone must provide. Follow the requests for your application."
+  },
+  "offer": {
+    "version": 3,
+    "title": "What happens after your offer is accepted?",
+    "intro": "Keep the dates and next steps you have been given in one place. If you are unsure, ask the person handling that part of the purchase.",
+    "steps": [
+      {
+        "title": "Where do things stand?",
+        "prompt": "Choose the stage that fits your situation.",
+        "fields": [
+          {
+            "id": "stage",
+            "label": "My offer",
+            "type": "select",
+            "options": [
+              {
+                "value": "",
+                "label": "Choose if you know"
+              },
+              {
+                "value": "preparing",
+                "label": "I am getting ready to make an offer"
+              },
+              {
+                "value": "submitted",
+                "label": "I have made an offer"
+              },
+              {
+                "value": "accepted",
+                "label": "My offer was accepted"
+              },
+              {
+                "value": "not_sure",
+                "label": "Not sure"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "What dates have you been given?",
+        "prompt": "Use dates from your agent, lender or transaction documents. Leave them blank if you do not know.",
+        "fields": [
+          {
+            "id": "inspection_date",
+            "label": "Inspection date or deadline I was given",
+            "type": "date",
+            "maxLength": 10
+          },
+          {
+            "id": "appraisal_date",
+            "label": "Appraisal date I was given",
+            "type": "date",
+            "maxLength": 10
+          },
+          {
+            "id": "financing_date",
+            "label": "Financing date or deadline I was given",
+            "type": "date",
+            "maxLength": 10
+          },
+          {
+            "id": "closing_date",
+            "label": "Closing date I was given",
+            "type": "date",
+            "maxLength": 10
+          },
+          {
+            "id": "date_source",
+            "label": "Who gave me these dates / what I need to confirm",
+            "type": "text",
+            "maxLength": 500
+          }
+        ]
+      },
+      {
+        "title": "What needs to happen next?",
+        "prompt": "Write the next task and who is handling it.",
+        "fields": [
+          {
+            "id": "next_task",
+            "label": "Next task",
+            "type": "text",
+            "maxLength": 1000
+          },
+          {
+            "id": "task_owner",
+            "label": "Person handling it",
+            "type": "text",
+            "maxLength": 120
+          }
+        ]
+      },
+      {
+        "title": "What do you need explained?",
+        "prompt": "Write the question you most want answered.",
+        "fields": [
+          {
+            "id": "concern",
+            "label": "What I am worried about or unsure of",
+            "type": "text",
+            "maxLength": 1000
+          },
+          {
+            "id": "question",
+            "label": "My first question for Brooks",
+            "type": "text",
+            "maxLength": 2000
+          }
+        ]
+      }
+    ],
+    "disclosure": "This page does not set deadlines or interpret contract terms. Confirm dates and contract questions with your agent, lender or an appropriate professional."
+  },
+  "shop": {
+    "version": 3,
+    "title": "Which home fits what you want to spend?",
+    "intro": "Compare two homes you are considering and the questions you would want answered before choosing.",
+    "steps": [
+      {
+        "title": "Which homes are you comparing?",
+        "prompt": "A nickname is enough. You do not need to enter an address.",
+        "fields": [
+          {
+            "id": "a_name",
+            "label": "Home A — nickname",
+            "type": "text",
+            "maxLength": 120
+          },
+          {
+            "id": "b_name",
+            "label": "Home B — nickname",
+            "type": "text",
+            "maxLength": 120
+          }
+        ]
+      },
+      {
+        "title": "What matters to you about each home?",
+        "prompt": "Write your must-haves and anything that makes you hesitate.",
+        "fields": [
+          {
+            "id": "must_haves",
+            "label": "What I want in a home or area",
+            "type": "text",
+            "maxLength": 1000
+          },
+          {
+            "id": "a_hesitation",
+            "label": "Home A — what makes me hesitate",
+            "type": "text",
+            "maxLength": 500
+          },
+          {
+            "id": "b_hesitation",
+            "label": "Home B — what makes me hesitate",
+            "type": "text",
+            "maxLength": 500
+          }
+        ]
+      },
+      {
+        "title": "What would each home cost each month?",
+        "prompt": "Use estimates you have. Note which costs are already included so you do not count them twice.",
+        "fields": [
+          {
+            "id": "a_housing",
+            "label": "Home A — housing payment with taxes and insurance — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "a_other_costs",
+            "label": "Home A — HOA, utilities and commute costs; included or separate?",
+            "type": "text",
+            "maxLength": 1000
+          },
+          {
+            "id": "b_housing",
+            "label": "Home B — housing payment with taxes and insurance — amount or not sure",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "b_other_costs",
+            "label": "Home B — HOA, utilities and commute costs; included or separate?",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "What do you need to know about repairs?",
+        "prompt": "Write down condition or repair questions to ask the agent, inspector or other relevant professional.",
+        "fields": [
+          {
+            "id": "a_repairs",
+            "label": "Home A — repair questions",
+            "type": "text",
+            "maxLength": 1000
+          },
+          {
+            "id": "b_repairs",
+            "label": "Home B — repair questions",
+            "type": "text",
+            "maxLength": 1000
+          }
+        ]
+      },
+      {
+        "title": "What would you want answered before choosing?",
+        "prompt": "Choose the question you most want answered before deciding.",
+        "fields": [
+          {
+            "id": "question",
+            "label": "My first question for Brooks",
+            "type": "text",
+            "maxLength": 2000
+          }
+        ]
+      }
+    ],
+    "disclosure": "This comparison records your notes; it does not score or rank homes."
+  },
+  "plan": {
+    "version": 3,
+    "title": "What needs to happen before you buy?",
+    "intro": "Start with when you would like to move, what you already know and one next step.",
+    "steps": [
+      {
+        "title": "When would you like to move?",
+        "prompt": "Write the timing that works for you and any lease date you need to check.",
+        "fields": [
+          {
+            "id": "move_timing",
+            "label": "When I would like to move",
+            "type": "text",
+            "maxLength": 200
+          },
+          {
+            "id": "lease_date",
+            "label": "Lease date I need to plan around",
+            "type": "date",
+            "maxLength": 10
+          },
+          {
+            "id": "lease_question",
+            "label": "What I need to check about my lease",
+            "type": "text",
+            "maxLength": 500
+          }
+        ]
+      },
+      {
+        "title": "What have you already worked out?",
+        "prompt": "A short note is enough. You do not need to fill out your whole budget again.",
+        "fields": [
+          {
+            "id": "known_payment",
+            "label": "What I know about the payment I want",
+            "type": "text",
+            "maxLength": 500
+          },
+          {
+            "id": "known_cash",
+            "label": "What I know about cash needed",
+            "type": "text",
+            "maxLength": 500
+          },
+          {
+            "id": "known_preapproval",
+            "label": "Where I am with preapproval",
+            "type": "text",
+            "maxLength": 500
+          }
+        ]
+      },
+      {
+        "title": "What still needs an answer?",
+        "prompt": "Write down the question that is keeping you from deciding what to do next.",
+        "fields": [
+          {
+            "id": "question",
+            "label": "My first question for Brooks",
+            "type": "text",
+            "maxLength": 2000
+          }
+        ]
+      },
+      {
+        "title": "What is one thing you want to do next?",
+        "prompt": "Choose your next step and when you want to check back.",
+        "fields": [
+          {
+            "id": "next_step",
+            "label": "My next step",
+            "type": "text",
+            "maxLength": 1000
+          },
+          {
+            "id": "who_can_help",
+            "label": "Who can help",
+            "type": "text",
+            "maxLength": 120
+          },
+          {
+            "id": "check_back_date",
+            "label": "When I want to check back",
+            "type": "date",
+            "maxLength": 10
+          }
+        ]
+      }
+    ],
+    "disclosure": "Dates on this page are your planning dates, not a promised purchase timeline."
+  }
+}
