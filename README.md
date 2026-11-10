@@ -33,3 +33,14 @@ Review pages under `review/` use randomly named paths, responsive native video c
 Payment, Cash, Credit, Ready, Compare, Shop and Plan now include their matching Brooks-narrated explainer near the top, before the exercises. Each native player supports inline mobile playback, captions and a direct-video link; videos do not autoplay, and the entire video section is hidden when printing. The library links directly to each available player. Offer has no placeholder or broken player while its narration remains under review.
 
 Approved MP4/poster/VTT files live under `fthb/videos/<workbook>/`. `scripts/explainer-videos.json` controls availability and duration, and `generate-tools.py` persists video markup through the shared template. Payment retains its separately maintained HTML. The shared `workbook-video.css` controls only the player section; existing mobile layout, four sticky actions, form fields, submission logic and privacy/disclosure text remain intact. Publish only the approved media files, never internal voice or delivery logs. Verify all seven media bindings/hashes, actual mobile playback layout, print hiding, generator idempotence and mocked form suites before release.
+
+## Unlisted TDHCA workflow overview — November 10, 2026
+
+`review/tdhca-workflow-6c8a2f19d4e7/index.html` is a standalone, mobile-friendly
+team guide to the full 36-month journey. It distinguishes operating intake from
+the draft nurture, includes the first14day call schedule, weekly email cadence,
+reply branches, workbook/video links and dated launch checks. It makes no API
+calls, contains no borrower records, and cannot activate flows or send messages.
+Use the header to copy its link or print/save PDF. It is public to anyone with
+the URL; noindex is not access control. Review the dated status when operations
+change. Publish through PR/main and verify the Pages commit and HTTPS bytes.
