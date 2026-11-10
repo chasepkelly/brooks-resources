@@ -37,10 +37,21 @@ Approved MP4/poster/VTT files live under `fthb/videos/<workbook>/`. `scripts/exp
 ## Unlisted TDHCA workflow overview — November 10, 2026
 
 `review/tdhca-workflow-6c8a2f19d4e7/index.html` is a standalone, mobile-friendly
-team guide to the full 36-month journey. It distinguishes operating intake from
-the draft nurture, includes the first14day call schedule, weekly email cadence,
+team guide to the full 36-month journey. It records the dated live launch snapshot, distinguishing active journeys,
+actual outbound emails and Scott’s call tasks, includes the first14day call schedule, weekly email cadence,
 reply branches, workbook/video links and dated launch checks. It makes no API
 calls, contains no borrower records, and cannot activate flows or send messages.
 Use the header to copy its link or print/save PDF. It is public to anyone with
 the URL; noindex is not access control. Review the dated status when operations
 change. Publish through PR/main and verify the Pages commit and HTTPS bytes.
+
+
+The November 10 launch update records 123 active journeys and one suppressed
+contact, with 123 day-0 call tasks and 123 accepted emails at 4:30pm Central. The provider snapshot distinguishes 119 delivered, three suppressed invalid addresses and one pending delivery confirmation. It documents tested
+reply/resource forwarding and preserves booking-attribution and retargeting
+limitations. It contains aggregate operational counts only, no contact records.
+Refresh the dated snapshot after deployment milestones; this is not a live API.
+
+The durable future-arrival Central default and bounded native enrollment batch
+were verified live at 4:33pm Central. Existing recorded time zones and opt-outs
+remain preserved. The delivery counts above remain a dated 4:30pm snapshot.
