@@ -1,4 +1,4 @@
-/* Public, browser-only workbook UI. No background save, analytics, or document upload. */
+/* Public, browser-only workbook UI. No background answer save or document upload; separate optional activity measurements. */
 (() => {
   'use strict';
   const actionBar = document.querySelector('.workbook-actions');
@@ -83,6 +83,7 @@
     document.querySelectorAll('[data-review-label]').forEach(input => pair(dl, input.dataset.reviewLabel, displayedValue(input)));
     review.replaceChildren(dl);
     form.hidden = true; panel.hidden = false; panel.focus(); status.textContent = '';
+    window.BKEngagement?.track('review_open', {}, 'review:opened');
   });
   editButton.addEventListener('click', () => { resetReview(); form.elements.name.focus(); });
   sendButton.addEventListener('click', async () => {
@@ -91,14 +92,19 @@
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 20000);
     try {
+      // Tracking context is optional and kept outside answer/retry identity.
+      const engagement = window.BKEngagement?.submissionContext?.();
+      const measuredPayload = engagement ? { ...reviewedPayload, engagement } : reviewedPayload;
+      const outboundPayload = new TextEncoder().encode(JSON.stringify(measuredPayload)).length <= 32000 ? measuredPayload : reviewedPayload;
       const response = await fetch('https://oznktsrggzrzjgzzhyxv.supabase.co/functions/v1/workbook-submit', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(reviewedPayload), signal: controller.signal,
+        body: JSON.stringify(outboundPayload), signal: controller.signal,
       });
       let result;
       try { result = await response.json(); } catch { throw new Error('unconfirmed'); }
       if (!response.ok || result?.ok !== true || result.submission_id !== submissionId) throw new Error(response.status === 429 ? 'rate_limited' : 'unconfirmed');
       panel.hidden = true;
+      window.BKEngagement?.track('submission_acknowledged', {}, 'submission:acknowledged');
       status.textContent = 'Your workbook was received for review by Brooks’s team. You can still print your answers for your records.';
       reviewedPayload = null;
       status.focus();

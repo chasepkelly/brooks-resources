@@ -55,3 +55,14 @@ Refresh the dated snapshot after deployment milestones; this is not a live API.
 The durable future-arrival Central default and bounded native enrollment batch
 were verified live at 4:33pm Central. Existing recorded time zones and opt-outs
 remain preserved. The delivery counts above remain a dated 4:30pm snapshot.
+
+## Deal engagement measurements
+
+The resource library and eight workbooks now include the shared first-party
+activity client described in [ENGAGEMENT.md](ENGAGEMENT.md). It starts disabled
+until the matching CRM endpoint and privacy text are reviewed and deployed.
+Page/scroll/estimated-active-time/video/action events contain no workbook answers
+or identity fields. Visitors can opt out, and browser GPC/Do Not Track is
+respected. Personal links use opaque attribution references; anonymous activity
+is never guessed onto a deal. Publishing or enabling this client does not send
+outreach or change funnel stages.
