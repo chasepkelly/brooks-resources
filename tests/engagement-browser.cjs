@@ -17,12 +17,13 @@ const endpoint =
     const p = await ctx.newPage(),
       requests = [],
       submissions = [];
-    await p.route("**/engagement-config.js", (r) =>
-      r.fulfill({
+    await p.route("**/engagement-config.js", (r) => {
+      assert.equal(r.request().headers().referer, undefined);
+      return r.fulfill({
         contentType: "text/javascript",
         body: `window.BKEngagementConfig={enabled:${options.enabled !== false},endpoint:${JSON.stringify(endpoint)}};`,
-      }),
-    );
+      });
+    });
     await p.route(endpoint, (r) => {
       requests.push(r.request().postDataJSON());
       return r.fulfill({
@@ -43,6 +44,15 @@ const endpoint =
         },
       });
     });
+    if (options.cachedToken)
+      await p.addInitScript(
+        (token) =>
+          sessionStorage.setItem(
+            "bk-engagement-link-v1",
+            JSON.stringify({ token, at: Date.now() }),
+          ),
+        options.cachedToken,
+      );
     if (options.blockedStorage)
       await p.addInitScript(() =>
         Object.defineProperty(window, "localStorage", {
@@ -215,6 +225,39 @@ const endpoint =
     checks++;
     await f.ctx.close();
   }
+  // Explicit malformed, empty, or ambiguous identity never falls back to cached or anonymous attribution.
+  for (const query of [
+    "ck_et=bad",
+    "ck_et=",
+    `ck_et=${"a".repeat(64)}&ck_et=${"b".repeat(64)}`,
+  ]) {
+    for (const cachedToken of [undefined, "d".repeat(64)]) {
+      const invalid = await page({ cachedToken });
+      await invalid.p.goto(`${BASE}/fthb/payment.html?${query}`);
+      await invalid.p.waitForTimeout(1800);
+      assert.equal(invalid.requests.length, 0);
+      assert.equal(await invalid.p.evaluate(() => BKEngagement.enabled), false);
+      assert.equal(
+        await invalid.p.evaluate(() =>
+          sessionStorage.getItem("bk-engagement-link-v1"),
+        ),
+        null,
+      );
+      assert.equal(new URL(invalid.p.url()).searchParams.has("ck_et"), false);
+      checks++;
+      await invalid.ctx.close();
+    }
+  }
+  const disabled = await page({ enabled: false, cachedToken: "e".repeat(64) });
+  await disabled.p.goto(`${BASE}/fthb/payment.html`);
+  assert.equal(
+    await disabled.p.evaluate(() =>
+      sessionStorage.getItem("bk-engagement-link-v1"),
+    ),
+    null,
+  );
+  checks++;
+  await disabled.ctx.close();
   console.log(JSON.stringify({ pass: true, checks, realBackendRequests: 0 }));
   await browser.close();
 })().catch((e) => {

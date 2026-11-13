@@ -35,7 +35,9 @@ keys are `payment`, `cash`, `credit`, `ready`, `compare`, `shop`, `offer`, `plan
 
 Analytics never reads or sends answers, names, email addresses, phone numbers,
 keystroke values, amounts, account details, documents, URL query strings, referrers
-or session replay. Workbook answer review, payloads, retry IDs and sending remain
+or session replay. An early `no-referrer` page policy also prevents subresource and
+beacon requests from forwarding the document URL. Workbook answer review, payloads,
+retry IDs and sending remain
 in the existing explicit confirmation process.
 
 ## Identity, privacy and storage
@@ -50,7 +52,9 @@ recipient-linked activity, not proof that the named recipient was the visitor.
 
 An unlinked visitor may produce anonymous site-only events. The server must
 keep these contact/deal identifiers empty and must not guess an identity.
-Invalid supplied tokens stop the page's tracking; they do not downgrade into a
+Explicit malformed, empty or duplicate token parameters clear the cached binding
+and stop the page's tracking. Invalid server-rejected tokens also stop tracking;
+they do not downgrade into a
 new anonymous submission on the same page. Tokens are attribution references and
 never grant access to private CRM records.
 
@@ -97,7 +101,8 @@ tracking/privacy additions must survive regeneration. Payment and the library
 are maintained separately. Publish through a reviewed GitHub PR to main and
 verify the exact Pages revision and live assets. Keep `enabled:false` until the
 CRM endpoint and privacy/attribution checks pass; the configuration is the
-resource-side kill switch. No workbook or tracking deployment itself enrolls a
+resource-side kill switch and clears any cached token when disabled. No workbook
+or tracking deployment itself enrolls a
 lead, changes a deal stage, records a human conversation or sends outreach.
 
 Technical references: [Page Visibility](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API),

@@ -219,10 +219,16 @@
         win[store].setItem(key, value);
       } catch (_) {}
     };
-    let token = "";
+    let token = "",
+      invalidIncoming = false;
     try {
       const url = new URL(win.location.href),
-        incoming = url.searchParams.get("ck_et");
+        incoming = url.searchParams.getAll("ck_et");
+      if (incoming.length) {
+        invalidIncoming =
+          incoming.length !== 1 || !/^[a-f0-9]{64}$/.test(incoming[0]);
+        if (!invalidIncoming) token = incoming[0];
+      }
       if (url.searchParams.has("ck_et")) {
         url.searchParams.delete("ck_et");
         win.history.replaceState(
@@ -231,16 +237,21 @@
           url.pathname + url.search + url.hash,
         );
       }
-      if (incoming && /^[a-f0-9]{64}$/.test(incoming)) token = incoming;
-    } catch (_) {}
+    } catch (_) {
+      invalidIncoming = true;
+      token = "";
+    }
     const protectedPrivacy =
       win.navigator.globalPrivacyControl === true ||
       win.navigator.doNotTrack === "1" ||
       win.doNotTrack === "1";
     let off =
-      protectedPrivacy || safeGet("localStorage", preferenceKey) === "1";
+      protectedPrivacy ||
+      invalidIncoming ||
+      safeGet("localStorage", preferenceKey) === "1";
     if (off) safeRemove("sessionStorage", tokenKey);
     if (cfg.enabled !== true) {
+      safeRemove("sessionStorage", tokenKey);
       win.BKEngagement = {
         track() {
           return false;
@@ -272,7 +283,10 @@
           : off
             ? "Turn on activity measurement"
             : "Turn off activity measurement";
-        button.disabled = protectedPrivacy || !preferenceAvailable;
+        button.disabled =
+          protectedPrivacy || invalidIncoming || !preferenceAvailable;
+        if (invalidIncoming)
+          button.textContent = "Activity measurement is off (invalid link)";
         if (!preferenceAvailable)
           button.textContent =
             "Activity measurement is off (privacy preference storage unavailable)";
