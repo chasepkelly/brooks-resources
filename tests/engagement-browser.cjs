@@ -201,6 +201,53 @@ const endpoint =
   assert.equal("engagement" in submissions.at(-1), false);
   checks++;
   await ctx.close();
+  // Real SDK wiring: replay advances currentTime while unique played ranges remain unchanged.
+  const replay = await page();
+  await replay.p.goto(`${BASE}/fthb/payment.html`);
+  await replay.p.waitForFunction(() => BKEngagement.enabled);
+  await replay.p.evaluate(() => {
+    window.__testNow = performance.now();
+    Object.defineProperty(performance, "now", {
+      configurable: true,
+      value: () => window.__testNow,
+    });
+    const video = document.querySelector("video");
+    let media = 0;
+    Object.defineProperties(video, {
+      duration: { configurable: true, value: 120 },
+      currentTime: { configurable: true, get: () => media },
+      paused: { configurable: true, value: false },
+      seeking: { configurable: true, value: false },
+      played: {
+        configurable: true,
+        value: { length: 1, start: () => 0, end: () => 90 },
+      },
+    });
+    video.dispatchEvent(new Event("play"));
+    for (let sec = 1; sec <= 90; sec++) {
+      media = sec;
+      window.__testNow += 1000;
+      video.dispatchEvent(new Event("timeupdate"));
+    }
+    video.dispatchEvent(new Event("pause"));
+    window.dispatchEvent(new Event("pagehide"));
+  });
+  await replay.p.waitForTimeout(300);
+  const replayEvents = replay.requests.flatMap((r) => r.events);
+  assert.ok(
+    replayEvents.some(
+      (e) => e.event_type === "engagement_pulse" && e.active_ms >= 90000,
+    ),
+  );
+  const replayPause = replayEvents.find((e) => e.event_type === "video_pause");
+  assert.equal(replayPause.played_ms, 90000);
+  assert.equal(replayPause.video_percent, 75);
+  assert.equal(
+    replayEvents.some((e) => e.event_type === "video_complete"),
+    false,
+  );
+  checks++;
+  await replay.ctx.close();
   // Anonymous events contain no inferred identity; browser privacy preference disables all uploads.
   const anon = await page();
   await anon.p.goto(`${BASE}/fthb/index.html`);

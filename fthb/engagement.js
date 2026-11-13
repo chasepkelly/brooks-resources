@@ -90,9 +90,27 @@
     }
     return Math.round(total * 1000);
   }
-  function advancingVideo(visible, paused, seeking, before, after) {
+  function advancingVideo(
+    visible,
+    paused,
+    seeking,
+    before,
+    after,
+    elapsedMs,
+    rate,
+  ) {
+    const advancedMs = (after - before) * 1000;
     return (
-      visible && !paused && !seeking && Number.isFinite(after) && after > before
+      visible &&
+      !paused &&
+      !seeking &&
+      [before, after, elapsedMs, rate].every(Number.isFinite) &&
+      elapsedMs > 0 &&
+      elapsedMs <= 5000 &&
+      rate > 0 &&
+      rate <= 16 &&
+      advancedMs > 0 &&
+      advancedMs <= elapsedMs * rate + 250
     );
   }
   function create(options) {
@@ -446,7 +464,11 @@
     );
     for (const video of doc.querySelectorAll("video")) {
       const milestones = new Set();
-      let previousPlayed = 0;
+      let sample;
+      function resetSample() {
+        sample = { media: video.currentTime, wall: win.performance.now() };
+      }
+      resetSample();
       function progress(type) {
         const ranges = [];
         for (let i = 0; i < video.played.length; i++)
@@ -457,12 +479,14 @@
             doc.visibilityState === "visible",
             video.paused,
             video.seeking,
-            previousPlayed,
-            ms,
+            sample.media,
+            video.currentTime,
+            win.performance.now() - sample.wall,
+            video.playbackRate,
           )
         )
           engine.interact();
-        previousPlayed = ms;
+        resetSample();
         const pct =
           video.duration > 0
             ? Math.min(100, (100 * ms) / (video.duration * 1000))
@@ -480,9 +504,14 @@
           }
       }
       video.addEventListener("play", () => {
-        engine.interact();
+        resetSample();
+        if (doc.visibilityState === "visible" && !video.seeking)
+          engine.interact();
         progress("video_start");
       });
+      for (const name of ["seeking", "seeked", "ratechange"])
+        video.addEventListener(name, resetSample);
+      doc.addEventListener("visibilitychange", resetSample);
       video.addEventListener("pause", () => progress("video_pause"));
       video.addEventListener("timeupdate", () => progress());
       video.addEventListener("ended", () => progress());

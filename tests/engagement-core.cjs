@@ -162,19 +162,45 @@ function fixture(send = async () => true) {
     assert.deepEqual(sent[0], sent[1]);
     assert.equal(f.engine.queued, 0);
   });
-  await test("foreground advancing playback extends active time without using media speed", () => {
-    assert.equal(advancingVideo(true, false, false, 1000, 3000), true);
+  await test("foreground playback uses wall time, including replay, and rejects seek jumps", () => {
+    assert.equal(advancingVideo(true, false, false, 1, 3, 1000, 2), true);
     for (const args of [
-      [false, false, false, 1, 2],
-      [true, true, false, 1, 2],
-      [true, false, true, 1, 2],
-      [true, false, false, 2, 2],
+      [false, false, false, 1, 2, 1000, 1],
+      [true, true, false, 1, 2, 1000, 1],
+      [true, false, true, 1, 2, 1000, 1],
+      [true, false, false, 2, 2, 1000, 1],
+      [true, false, false, 1, 90, 1000, 1],
+      [true, false, false, 90, 1, 1000, 1],
+      [true, false, false, 1, 2, 0, 1],
+      [true, false, false, 1, 11, 10000, 1],
     ])
       assert.equal(advancingVideo(...args), false);
     const f = fixture();
-    f.set(1000);
-    if (advancingVideo(true, false, false, 0, 2000)) f.engine.interact();
-    assert.equal(f.engine.active, 1000);
+    // A 90-second replay of already-covered content stays active without growing unique progress.
+    const uniqueBefore = rangeMilliseconds([[0, 90]], 120);
+    for (let sec = 1; sec <= 90; sec++) {
+      f.set(sec * 1000);
+      if (advancingVideo(true, false, false, sec - 1, sec, 1000, 1))
+        f.engine.interact();
+      f.engine.pulse();
+    }
+    assert.equal(f.engine.active, 90000);
+    assert.equal(
+      rangeMilliseconds(
+        [
+          [0, 90],
+          [0, 90],
+        ],
+        120,
+      ),
+      uniqueBefore,
+    );
+    // At 2x speed media advances twice as far, but estimated active duration remains wall time.
+    const fast = fixture();
+    fast.set(1000);
+    if (advancingVideo(true, false, false, 0, 2, 1000, 2))
+      fast.engine.interact();
+    assert.equal(fast.engine.active, 1000);
   });
   await test("only registered resource paths can be instrumented", () =>
     assert.throws(() =>

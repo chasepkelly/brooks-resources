@@ -14,8 +14,11 @@ and the opening of a print dialog. The library is the `library` asset; other ass
 keys are `payment`, `cash`, `credit`, `ready`, `compare`, `shop`, `offer`, `plan`.
 
 - Active time uses a monotonic wall clock while the page is visible and there was
-  interaction in the last 60 seconds. Advancing visible video also refreshes that
-  activity window; hidden, paused and seeking video does not. Playing at 2x does
+  interaction in the last 60 seconds. Visible video current-time advancement also
+  refreshes that activity window, including replay of content already watched.
+  Samples reset on seeks, playback/rate and visibility transitions; media movement
+  must fit the elapsed wall time and playback rate. Hidden, paused and seeking
+  video does not refresh activity. Playing at 2x does
   not double active time. A page visit is capped at four active hours.
 - Scroll milestones are 25/50/75/90 percent of the scrollable distance. They do not
   prove reading or comprehension.
