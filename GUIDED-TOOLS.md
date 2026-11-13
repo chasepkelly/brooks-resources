@@ -28,10 +28,14 @@ Each page embeds only its public schema, so it does not need a network fetch to 
 
 POST the existing workbook-submit endpoint with `{workbook,version:3,submission_id,contact,website,answers}`. Workbook is one of the seven registry keys; answers is a flat object of strings keyed by the public schema's exact field IDs. Text lengths are200/500/1000/2000, dates blank or ISO YYYY-MM-DD, and select values must match the schema. Answers are optional; unknown keys/types are invalid. Browser UTF-8 cap is32,000 bytes, below the server32KiB bound. No browser secret is required or embedded.
 
-All state stays in tab memory. Refresh/close discards unsent entries. Sending requires review and a second explicit confirmation. Pending sends disable answer edits and submission controls; unchanged retries retain the UUID and edited payloads get a new UUID. Only a matching successful backend receipt displays success. Failure leaves answers intact. The backend owns validation, abuse limits, persistence, resource-specific CRM note/task and team notification; no flow activation is implied.
+All workbook answer state stays in tab memory. Refresh/close discards unsent entries. Sending requires review and a second explicit confirmation. Pending sends disable answer edits and submission controls; unchanged retries retain the UUID and edited payloads get a new UUID. Only a matching successful backend receipt displays success. Failure leaves answers intact. The backend owns validation, abuse limits, persistence, resource-specific CRM note/task and team notification; no flow activation is implied.
 
 ## Verification and release
 
 Serve this repository on8794, then run `node tests/guided-tools-v3.cjs`. Optional `PLAYWRIGHT_MODULE`, `CHROME_PATH`, `WORKBOOK_URL` and `SCREENSHOT_DIR` configure installed browser tooling, local URL and private evidence output. All HTTP submissions are mocked; the test never creates CRM activity. It checks75 answer values across seven forms for payload/review/print parity, empty defaults, validation, failure/retry behavior, safe rendering, idempotency, double-submit prevention, no persistence and four responsive sizes. Private PDFs/screenshots and client-language source records are outside this public repository.
 
 Before publication: independent review and root copy/UI approval; deploy the backward-compatible version3 backend; perform the authorized backend smoke test once; then merge the reviewed static-site PR and verify exact Pages commit plus normal HTTPS byte parity. This work does not publish videos, alter native journey schedules or send campaigns.
+
+## Optional activity measurements
+
+[ENGAGEMENT.md](ENGAGEMENT.md) describes the separate, default-disabled activity client and privacy controls. The renderer emits review and successful browser-acknowledgment milestones without sending any answers to analytics. Answer review and confirmation remain unchanged; the measurement layer never decides whether a submission succeeded.
